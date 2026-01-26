@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shweta Raje| Senior Product Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           COLOR VARIABLES - EDIT THESE TO CHANGE COLORS
+           ======================================== */
+        :root {
+            --color-primary: #f59e0b;        /* Amber - main accent color */
+            --color-primary-light: #fbbf24;  /* Lighter amber for hover */
+            --color-primary-dark: #d97706;   /* Darker amber */
+            --color-dark: #0f172a;           /* Dark background */
+            --color-dark-lighter: #1e293b;   /* Slightly lighter dark */
+            --color-dark-border: #334155;    /* Dark borders */
+            --color-light: #ffffff;          /* White */
+            --color-light-bg: #f8fafc;       /* Light gray background */
+            --color-text: #1e293b;           /* Main text */
+            --color-text-muted: #64748b;     /* Muted text */
+            --color-text-light: #94a3b8;     /* Light text */
+        }
+
+        /* ========================================
+           BASE STYLES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-lighter) 50%, var(--color-dark) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero-bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .hero-bg-circle-1 {
+            width: 600px;
+            height: 600px;
+            border: 1px solid white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-bg-circle-2 {
+            width: 800px;
+            height: 800px;
+            border: 1px solid white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+        }
+
+        .hero-glow-1 {
+            background: var(--color-primary);
+            top: 20%;
+            left: 20%;
+        }
+
+        .hero-glow-2 {
+            background: #3b82f6;
+            bottom: 20%;
+            right: 20%;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-text {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-name {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero-title {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: var(--color-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .hero-description {
+            color: var(--color-text-light);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            animation: bounce 2s infinite;
+        }
+
+        /* ========================================
+           SECTIONS BASE
+           ======================================== */
+        .section {
+            padding: 8rem 1.5rem;
+        }
+
+        .section-dark {
+            background: var(--color-dark);
+            color: white;
+        }
+
+        .section-light {
+            background: var(--color-light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-label {
+            color: var(--color-primary);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-dark .section-title {
+            color: white;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-dark .section-description {
+            color: var(--color-text-light);
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .strength-card {
+            padding: 2rem;
+            background: var(--color-light-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .strength-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .strength-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .strength-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .strength-description {
+            color: var(--color-text-muted);
+        }
+
+        .leadership-banner {
+            background: linear-gradient(135deg, var(--color-dark), var(--color-dark-lighter));
+            border-radius: 1.5rem;
+            padding: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .leadership-content h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-content p {
+            color: var(--color-text-light);
+            max-width: 500px;
+        }
+
+        .leadership-stats {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+        }
+
+        /* ========================================
+           ACHIEVEMENTS SECTION
+           ======================================== */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            padding: 2rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .achievement-icon.blue { background: #dbeafe; color: #2563eb; }
+        .achievement-icon.green { background: #d1fae5; color: #059669; }
+        .achievement-icon.purple { background: #ede9fe; color: #7c3aed; }
+        .achievement-icon.rose { background: #ffe4e6; color: #e11d48; }
+        .achievement-icon.amber { background: #fef3c7; color: #d97706; }
+        .achievement-icon.cyan { background: #cffafe; color: #0891b2; }
+
+        .achievement-metric {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .achievement-description {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* ========================================
+           EXPERIENCE SECTION
+           ======================================== */
+        .experience-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        .company-logo.gap { background: #2563eb; }
+        .company-logo.cinemark { background: #dc2626; }
+        .company-logo.isn { background: #059669; }
+        .company-logo.pier1 { background: #ea580c; }
+        .company-logo.gt { background: #7c3aed; }
+
+        .experience-info {
+            flex: 1;
+        }
+
+        .experience-company {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-role {
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+
+        .experience-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .experience-toggle {
+            color: var(--color-text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card.active .experience-toggle {
+            transform: rotate(180deg);
+        }
+
+        .experience-content {
+            display: none;
+            padding: 0 1.5rem 1.5rem 5rem;
+        }
+
+        .experience-card.active .experience-content {
+            display: block;
+        }
+
+        .experience-highlight {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-highlight h4 {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-highlight ul {
+            list-style: none;
+        }
+
+        .experience-highlight li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-highlight li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        /* ========================================
+           SKILLS SECTION
+           ======================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-category {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--color-text-muted);
+        }
+
+        .skill-category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-category-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .skill-category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.375rem 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+
+        .competencies {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .competencies h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .competency-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .competency-tag {
+            padding: 0.5rem 1rem;
+            background: var(--color-dark-lighter);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+            transition: border-color 0.3s ease;
+        }
+
+        .competency-tag:hover {
+            border-color: var(--color-primary);
+        }
+
+        .certs-education {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card, .edu-card {
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .edu-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .cert-card .card-header { color: var(--color-primary); }
+        .edu-card .card-header { color: #60a5fa; }
+
+        .cert-list {
+            list-style: none;
+        }
+
+        .cert-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .cert-list li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--color-primary);
+            border-radius: 50%;
+        }
+
+        .edu-card h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card p {
+            color: var(--color-text-light);
+        }
+
+        /* ========================================
+           TESTIMONIALS SECTION
+           ======================================== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        .stars {
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-role {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .author-company {
+            font-size: 0.875rem;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           CONTACT SECTION
+           ======================================== */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-dark {
+            background: var(--color-dark);
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: var(--color-dark-lighter);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--color-dark);
+            border-top: 1px solid var(--color-dark-border);
+            padding: 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-text {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .leadership-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .leadership-stats {
+                justify-content: center;
+            }
+
+            .experience-content {
+                padding-left: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg-circle hero-bg-circle-1"></div>
+        <div class="hero-bg-circle hero-bg-circle-2"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+
+        <div class="hero-content">
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span class="status-text">Available for opportunities</span>
+            </div>
+
+            <h1 class="hero-name">Shweta Raje</h1>
+            <p class="hero-title">Senior Product Manager</p>
+            <p class="hero-subtitle">Data & AI Products • Strategic Leadership • Enterprise Analytics</p>
+            <p class="hero-description">
+                10+ years transforming complex data challenges into scalable, AI-powered solutions that drive measurable business outcomes.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="mailto:your@email.com" class="btn btn-primary">
+                    ✉️ Get in Touch
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn btn-outline">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">About</p>
+                <h2 class="section-title">Building the Future of Data</h2>
+                <p class="section-description">
+                    Strategic Product Manager with over 10 years of technical expertise and 5+ years of dedicated product leadership in data, analytics, and AI-powered platforms.
+                </p>
+            </div>
+
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <div class="strength-icon">🎯</div>
+                    <h3 class="strength-title">Strategic Vision</h3>
+                    <p class="strength-description">Translating ambiguous requirements into scalable technology solutions and high-impact roadmaps</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">👥</div>
+                    <h3 class="strength-title">Executive Partnership</h3>
+                    <p class="strength-description">Trusted advisor to C-Suite executives across Gap Inc. portfolio brands</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">💡</div>
+                    <h3 class="strength-title">AI Innovation</h3>
+                    <p class="strength-description">Pioneering AI-driven solutions that reduce decision-making time and optimize operations</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">📈</div>
+                    <h3 class="strength-title">Measurable Impact</h3>
+                    <p class="strength-description">Driving operational excellence with solutions that deliver quantifiable business outcomes</p>
+                </div>
+            </div>
+
+            <div class="leadership-banner">
+                <div class="leadership-content">
+                    <h3>Cross-Functional Leadership</h3>
+                    <p>A champion who unifies engineering, business partners, and global segments to remove process ambiguity and deliver measurable outcomes.</p>
+                </div>
+                <div class="leadership-stats">
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Stakeholder Groups</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Global Brands</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="section section-light" id="impact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Impact</p>
+                <h2 class="section-title">Measurable Results</h2>
+                <p class="section-description">Driving transformation through data-powered solutions that deliver quantifiable business value</p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon blue">⏱️</div>
+                    <div class="achievement-metric">40%</div>
+                    <div class="achievement-label">Faster Decision Making</div>
+                    <p class="achievement-description">AI-driven BI tool delivering automated data summaries within minutes</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon green">💰</div>
+                    <div class="achievement-metric">$2.4M</div>
+                    <div class="achievement-label">Annual Cost Savings</div>
+                    <p class="achievement-description">Center of Excellence program reallocating capital toward innovation</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon purple">📉</div>
+                    <div class="achievement-metric">70%</div>
+                    <div class="achievement-label">Reduced Manual Processing</div>
+                    <p class="achievement-description">Modernized technical workflows increasing analyst productivity</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon rose">🔀</div>
+                    <div class="achievement-metric">60%</div>
+                    <div class="achievement-label">Fewer Errors</div>
+                    <p class="achievement-description">Git-based governance for reporting assets improving data reliability</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon amber">📊</div>
+                    <div class="achievement-metric">72%</div>
+                    <div class="achievement-label">Increased Confidence</div>
+                    <p class="achievement-description">Executive decision confidence through risk management and clarity</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon cyan">⚡</div>
+                    <div class="achievement-metric">18-22%</div>
+                    <div class="achievement-label">Customer Recovery</div>
+                    <p class="achievement-description">Recovered lost customers through streamlined, improved processes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Experience</p>
+                <h2 class="section-title">Career Journey</h2>
+                <p class="section-description">A decade of progressive leadership in data, analytics, and product management</p>
+            </div>
+
+            <div class="experience-list">
+                <div class="experience-card active">
+                    <div class="experience-header" onclick="toggleExperience(this)">
+                        <div class="company-logo gap">G</div>
+                        <div class="experience-info">
+                            <h3 class="experience-company">Gap Inc.</h3>
+                            <p class="experience-role">Senior Product Manager, Data & AI Products</p>
+                            <div class="experience-meta">
+                                <span>📅 Feb 2022 – Present</span>
+                                <span>📍 San Francisco, CA</span>
+                            </div>
+                        </div>
+                        <div class="experience-toggle">▼</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlight">
+                            <h4>Inventory & Supply Planning Analytics</h4>
+                            <ul>
+                                <li>Improved inventory visibility and supply decision accuracy using near real-time insights</li>
+                                <li>Standardized To-Be process flows and KPIs, reducing planning ambiguity across regions</li>
+                                <li>Enabled proactive identification of excess inventory and constraints</li>
+                            </ul>
+                        </div>
+                        <div class="experience-highlight">
+                            <h4>Customer 360 Data Platform</h4>
+                            <ul>
+                                <li>Established single source of truth for customer data in a $10M portfolio project</li>
+                                <li>Improved executive decision confidence by 72%</li>
+                                <li>Accelerated customer-centric decisions by eliminating fragmented system views</li>
+                            </ul>
+                        </div>
+                        <div class="experience-highlight">
+                            <h4>AI-Driven BI Insight Engine</h4>
+                            <ul>
+                                <li>Reduced time-to-insight by 40% through analytics automation</li>
+                                <li>Accelerated marketing optimization cycles by 40%</li>
+                                <li>Recovered 18–22% of lost customers through streamlined processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header" onclick="toggleExperience(this)">
+                        <div class="company-logo cinemark">C</div>
+                        <div class="experience-info">
+                            <h3 class="experience-company">Cinemark</h3>
+                            <p class="experience-role">Product Manager</p>
+                            <div class="experience-meta">
+                                <span>📅 Nov 2021 – Feb 2022</span>
+                                <span>📍 Dallas, TX</span>
+                            </div>
+                        </div>
+                        <div class="experience-toggle">▼</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlight">
+                            <h4>Cloud Data Platform</h4>
+                            <ul>
+                                <li>Led development of scalable cloud-based data products</li>
+                                <li>Achieved 10% reduction in infrastructure costs and TCO</li>
+                                <li>Defined strategic architecture for cloud-native data ecosystem (Azure Synapse, Snowflake)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header" onclick="toggleExperience(this)">
+                        <div class="company-logo isn">I</div>
+                        <div class="experience-info">
+                            <h3 class="experience-company">ISN</h3>
+                            <p class="experience-role">Senior Product Analyst</p>
+                            <div class="experience-meta">
+                                <span>📅 Apr 2017 – Nov 2021</span>
+                                <span>📍 Dallas, TX</span>
+                            </div>
+                        </div>
+                        <div class="experience-toggle">▼</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlight">
+                            <h4>Analytics & Automation</h4>
+                            <ul>
+                                <li>Designed ingestion and processing frameworks for analytics and statistical modeling</li>
+                                <li>Led 4-person team to build API distribution framework saving $800K yearly</li>
+                                <li>Conducted analytics training increasing stakeholder data literacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header" onclick="toggleExperience(this)">
+                        <div class="company-logo pier1">P</div>
+                        <div class="experience-info">
+                            <h3 class="experience-company">Pier 1 Imports</h3>
+                            <p class="experience-role">Senior Business Intelligence Engineer</p>
+                            <div class="experience-meta">
+                                <span>📅 Oct 2014 – Apr 2017</span>
+                                <span>📍 Fort Worth, TX</span>
+                            </div>
+                        </div>
+                        <div class="experience-toggle">▼</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlight">
+                            <h4>Marketing Analytics</h4>
+                            <ul>
+                                <li>Architected marketing campaign data mart generating $2M in incremental sales</li>
+                                <li>Improved loyalty targeting increasing acquisition by 20%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header" onclick="toggleExperience(this)">
+                        <div class="company-logo gt">GT</div>
+                        <div class="experience-info">
+                            <h3 class="experience-company">Grant Thornton</h3>
+                            <p class="experience-role">Senior Business Associate</p>
+                            <div class="experience-meta">
+                                <span>📅 Sep 2011 – Oct 2014</span>
+                                <span>📍 Dallas, TX</span>
+                            </div>
+                        </div>
+                        <div class="experience-toggle">▼</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlight">
+                            <h4>Healthcare & Analytics Consulting</h4>
+                            <ul>
+                                <li>Supported healthcare merger integration leading to $5M contract extension</li>
+                                <li>Drove 30% client sales growth through large-scale data migrations</li>
+                                <li>Identified and resolved a $400M reporting gap using predictive analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Expertise</p>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-description">Comprehensive technical toolkit spanning analytics, cloud infrastructure, and AI</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">📊</div>
+                        <h3 class="skill-category-title">Analytics & BI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">SSRS</span>
+                        <span class="skill-tag">Alteryx</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Microsoft Fabric</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">☁️</div>
+                        <h3 class="skill-category-title">Cloud & Data Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Snowflake</span>
+                        <span class="skill-tag">Azure Synapse</span>
+                        <span class="skill-tag">Azure Data Factory</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">💻</div>
+                        <h3 class="skill-category-title">Development & Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Kusto</span>
+                        <span class="skill-tag">SSIS</span>
+                        <span class="skill-tag">SSAS</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Power Apps</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">🧠</div>
+                        <h3 class="skill-category-title">AI & Innovation</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">MCP</span>
+                        <span class="skill-tag">GPT Agents</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Predictive Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competencies">
+                <h3>Core Competencies</h3>
+                <div class="competency-tags">
+                    <span class="competency-tag">Product Strategy & Roadmap</span>
+                    <span class="competency-tag">Program Execution</span>
+                    <span class="competency-tag">Stakeholder Alignment</span>
+                    <span class="competency-tag">Process Mapping</span>
+                    <span class="competency-tag">KPI Frameworks</span>
+                    <span class="competency-tag">Data-Driven Decisions</span>
+                    <span class="competency-tag">Agile Delivery</span>
+                    <span class="competency-tag">Operational Excellence</span>
+                </div>
+            </div>
+
+            <div class="certs-education">
+                <div class="cert-card">
+                    <div class="card-header">🏆 Certifications</div>
+                    <ul class="cert-list">
+                        <li>Azure Fundamentals (AZ-900)</li>
+                        <li>Microsoft Certified Technology Specialist</li>
+                        <li>Microsoft Certified IT Professional</li>
+                        <li>Tableau Analyst</li>
+                        <li>Scrum Master Certified</li>
+                        <li>AI for Product Management</li>
+                    </ul>
+                </div>
+                <div class="edu-card">
+                    <div class="card-header">🎓 Education</div>
+                    <h4>Master of Science, Information Science</h4>
+                    <p>University of Texas at Dallas</p>
+                    <p style="font-size: 0.875rem; margin-top: 0.5rem;">2009 – 2011</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section section-light" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Testimonials</p>
+                <h2 class="section-title">What Leaders Say</h2>
+                <p class="section-description">Trusted by executives and peers across the organization</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                       I had the opportunity to collaborate with Shweta on the development of our Digital Performance Dashboard, and her contribution was exceptional. Shweta demonstrated deep analytical expertise, translating complex data into actionable insights and ensuring the dashboard was both accurate and user-friendly. Her ability to align technical solutions with business objectives, combined with clear communication and proactive problem-solving, made the project a success. I highly recommend Shweta for a role requiring advanced analytics, strategic thinking, and cross-functional collaboration.                    </p>
+                    <div class="testimonial-author">
+                        <div class="stars">★★★★★</div>
+                        <div class="author-name">Gaby Grzesiak</div>
+                        <div class="author-role">Principal Data Scientist</div>
+                        <div class="author-company">Gap Inc.</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                           I wanted to take moment to share my feedback with you how awesome it has been to work with Shweta over the years. I wanted to take this moment since we have successfully launched GAP Factory Canada.
+I had got an opportunity to work with her on big programs. 
+·                  She took ownership of incorporating the new requirements, validating updates, and publishing the dashboard.
+·                  This ensured on-time delivery and strengthened stakeholder trust in our reporting capabilities. 
+·                  I can see she takes pride in driving results through collaboration, ownership, and delivery excellence. 
+Her ability to communicate and build relationship has been very beneficial and critical for success.
+There is zero oversight needed as once she has made a commitment she will help deliver it on time.       </p>
+                    <div class="testimonial-author">
+                        <div class="stars">★★★★★</div>
+                        <div class="author-name">Chaitanya Shinde(RS)</div>
+                        <div class="author-role">Director</div>
+                        <div class="author-company">Gap Inc.</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                                   </p>
+                    <div class="testimonial-author">
+                        <div class="stars">★★★★★</div>
+                        <div class="author-name">Brandon Crouch</div>
+                        <div class="author-role">Senior Architect</div>
+                        <div class="author-company">Gap Inc.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <p class="section-label">Connect</p>
+                <h2 class="section-title">Let's Build Something Great</h2>
+                <p class="section-description" style="margin-bottom: 2rem;">
+                    Open to discussing product leadership roles, consulting opportunities, or simply connecting to share insights on data and AI strategy.
+                </p>
+
+                <div class="contact-buttons">
+                    <a href="mailto:your@email.com" class="btn btn-dark">
+                        ✉️ Send a Message →
+                    </a>
+                    <a href="https://www.linkedin.com/in/shwetarajethorat/" target="_blank" class="btn btn-outline" style="border-color: #cbd5e1; color: var(--color-text);">
+                        💼 Connect on LinkedIn →
+                    </a>
+                </div>
+
+                <div class="location">
+                    📍 Seattle, WA
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">© 2024 Shweta Raje. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleExperience(header) {
+            const card = header.parentElement;
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
